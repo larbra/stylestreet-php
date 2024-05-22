@@ -1521,6 +1521,9 @@ textarea{
 	flex-direction: column;
 	justify-content: space-between;
 }
+.tovar__content{
+	padding-top: 100px;
+}
 .tovar__title {
 	font-size: 45px;
 	width: 640px;
