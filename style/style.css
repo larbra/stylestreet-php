@@ -1521,9 +1521,6 @@ textarea{
 	flex-direction: column;
 	justify-content: space-between;
 }
-.tovar__content{
-	padding-top: 100px;
-}
 .tovar__title {
 	font-size: 45px;
 	width: 640px;
@@ -1640,6 +1637,14 @@ textarea{
 	color: black;
 }
 /* basket page */
+
+/* add page */
+.add__form{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+/* add page */
 @media screen and (max-width: 800px) {
 	.header-top-nav {
 		display: none;

@@ -25,6 +25,12 @@
 		</div>
 
 		<div class="receipts__items catalog__items">
+		<?php 
+		$sql = "SELECT * FROM stylestreet_tovar";
+		$result = $conn->query($sql);
+
+		
+		foreach ($result as $stylestreet_tovar) { ?>
 			<div class="receipts__item">
 				<div class="receipts__item-header">
 					<button class="receipts-btn">Новинка</button>
@@ -36,16 +42,17 @@
 				</div>
 				<div class="receipts__item-info">
 					<div class="receipts__item-info-text">
-						<h3 class="receipts-item-title">Женские</h3>
-						<a class="receipts-item-model" href="?page=tovar">Nike Air VaporMax 2023 Flyknit</a>
+						<h3 class="receipts-item-title"><?=$stylestreet_tovar['category']?></h3>
+						<a class="receipts-item-model" href="?page=tovar&id=<?=$stylestreet_tovar['id']?>"><?=$stylestreet_tovar['name']?></a>
 
-						<p class="receipts-item-price">7 899 ₽ <span>11 699 ₽</span></p>
+						<p class="receipts-item-price"><?=$stylestreet_tovar['price']?> ₽ <span>11 699 ₽</span></p>
 					</div>
 					<a href="#" class="receipts-icon"><img src="media/receipts/Added to cart.svg" alt="#"></a>
 				</div>
 			</div>
+			<?}
+		?>
 		</div>
-		
 		<div class="transition">
 			<div class="transition__content wrap">
 				<a href="" class="transition__link transition__link-active">1</a>
