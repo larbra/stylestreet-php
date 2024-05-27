@@ -37,8 +37,14 @@ if (isset($_GET['id'])) {
 				<p class="tovar__price">
 					<?= $stylestreet_tovar['price'] ?> ₽
 				</p>
-				<a class="tovar__btn">
+				<a class="tovar__btn" href="?page=basket">
 					Добавить в корзину
+				</a>
+				<a class="tovar__btn" href="?page=redact&id=<?=$get_id ?>">
+					Редактировать
+				</a>
+				<a class="tovar__btn" href="?page=del&id=<?=$get_id ?>">
+					Удалить
 				</a>
 			</div>
 		</div>
