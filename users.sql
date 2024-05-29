@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Хост: localhost
--- Время создания: Май 29 2024 г., 17:46
--- Версия сервера: 5.7.39-log
+-- Хост: 127.0.0.1:3306
+-- Время создания: Май 29 2024 г., 15:03
+-- Версия сервера: 5.6.51
 -- Версия PHP: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `x665`
+-- База данных: `stylestreet`
 --
 
 -- --------------------------------------------------------
@@ -32,7 +32,7 @@ CREATE TABLE `users` (
   `first_name` text,
   `email` text,
   `password` text,
-  `tel` int(100) DEFAULT NULL,
+  `role` int(100) DEFAULT NULL,
   `signup` varchar(250) DEFAULT NULL,
   `password_repeat` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -41,10 +41,9 @@ CREATE TABLE `users` (
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `email`, `password`, `tel`, `signup`, `password_repeat`) VALUES
-(1, '123', '123', '123', 123, '123', '123'),
-(4, 'Kirill', 'nice.kirill123@list.ru', '$2y$10$q8g8Q4LGvqv9hBCuGl5iD.lFNSYpHmC9nmFXs.sU1m/YWiEvu7aWy', NULL, NULL, NULL),
-(5, 'qwerty', 'qwerty@mail.ru', '$2y$10$USQQN5wtDwo0tJCftrT7.OBLfHnGSkOGg4tU0i4DT105m9y4OsWLa', NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `first_name`, `email`, `password`, `role`, `signup`, `password_repeat`) VALUES
+(4, 'Kirill', 'nice.kirill123@list.ru', '$2y$10$q8g8Q4LGvqv9hBCuGl5iD.lFNSYpHmC9nmFXs.sU1m/YWiEvu7aWy', 2, NULL, NULL),
+(5, 'qwerty', 'qwerty@mail.ru', '$2y$10$USQQN5wtDwo0tJCftrT7.OBLfHnGSkOGg4tU0i4DT105m9y4OsWLa', 1, NULL, NULL);
 
 --
 -- Индексы сохранённых таблиц

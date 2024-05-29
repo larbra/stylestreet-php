@@ -6,9 +6,9 @@
     
 ?>
 
-<div class="acc">
+<div class="acc wrap">
     <h1>Профиль</h1>
-    <p>Ваше имя: <?=$SIGNIN_USER['name']?></p>
+    <p>Ваше имя: <?=$SIGNIN_USER['first_name']?></p>
     <p>Ваша почта: <?=$SIGNIN_USER['email']?></p>   
     <p>Ваша роль: <?=$SIGNIN_USER['role']?></p>   
 </div>

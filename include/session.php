@@ -1,7 +1,7 @@
 <?php
     session_start();                        //старт сессии
-    if(isset($_SESSION['id'])){            //если пользователь авторизован
-        $USER_ID = $_SESSION['id'];        //глобальная ID авторизованноно ппользователя
+    if(isset($_SESSION['uid'])){            //если пользователь авторизован
+        $USER_ID = $_SESSION['uid'];        //глобальная ID авторизованноно ппользователя
         $sql = "SELECT * FROM users WHERE id='$USER_ID'";
         $result = $conn->query($sql);
         $SIGNIN_USER = $result->fetch();    //глобальная инф-я авторизованного пользователя 

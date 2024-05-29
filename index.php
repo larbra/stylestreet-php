@@ -58,6 +58,9 @@
 		if ($page == 'profile') {
 			include('./include/pages/profile.php');
 		}
+		if ($page == 'dashboard') {
+			include('./include/pages/dashboard.php');
+		}
 	} else include('./include/pages/start.php');
 	include('./include/footer.php');
 	?>

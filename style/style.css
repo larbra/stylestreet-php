@@ -116,6 +116,7 @@ button {
 	display: flex;
 	gap: 5px;
 	margin-top: 10px;
+	align-items: center;
 }
 
 .icon-box a {
@@ -1508,6 +1509,11 @@ textarea{
 	font-size: 16px;
 	font-weight: 400;
 }
+
+.p_errors{
+	font-size: 15px;
+	color: red;
+}
 /* DELIVETY PAGE */
 .acc p {
     color: black;
@@ -1518,7 +1524,6 @@ textarea{
 }
 
 .acc {
-    padding-left: 50px;
     gap: 10px;
 	padding-top: 100px;
 	height: 80vh;
