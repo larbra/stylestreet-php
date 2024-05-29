@@ -1,23 +1,5 @@
-<?php
-include('./include/connect.php');
-include("./include/session.php");
-?>
-
-<?php
-session_start();
-if (isset($_SESSION['id'])) {
-	$USER_ID = $_SESSION['id'];
-	$sql = "SELECT * FROM users WHERE id='$USER_ID'";
-	$result = $conn->query($sql);
-	$SIGNIN_USER = $result->fetch();
-}
-if (isset($_GET['do'])) {
-	if ($_GET['do'] == 'exit') {
-		session_unset();
-		echo '<script>document.location.href="?"</script>';
-	}
-}
-?>
+<?php include('./include/connect.php');?>
+<?php include("./include/session.php");?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -72,6 +54,9 @@ if (isset($_GET['do'])) {
 		}
 		if ($page == 'del') {
 			include('./include/pages/del.php');
+		}
+		if ($page == 'profile') {
+			include('./include/pages/profile.php');
 		}
 	} else include('./include/pages/start.php');
 	include('./include/footer.php');

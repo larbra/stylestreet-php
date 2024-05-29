@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1:3306
--- Время создания: Май 24 2024 г., 12:56
--- Версия сервера: 8.0.30
--- Версия PHP: 8.1.9
+-- Хост: localhost
+-- Время создания: Май 29 2024 г., 17:46
+-- Версия сервера: 5.7.39-log
+-- Версия PHP: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `stylestreet`
+-- База данных: `x665`
 --
 
 -- --------------------------------------------------------
@@ -28,13 +28,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `stylestreet_tovar` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(100) DEFAULT NULL,
   `description` text,
   `material` varchar(100) DEFAULT NULL,
   `price` varchar(100) DEFAULT NULL,
-  `category` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `category` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `stylestreet_tovar`
@@ -42,7 +42,9 @@ CREATE TABLE `stylestreet_tovar` (
 
 INSERT INTO `stylestreet_tovar` (`id`, `name`, `description`, `material`, `price`, `category`) VALUES
 (1, 'Nike Air VaporMax 2023 Flyknit', 'Кроссовки Nike Air VaporMax 2023 Flyknit с поддерживающей амортизацией, созданной для плавного бега, представляет собой совершенно новый взгляд на знакомую коллекцию.\r\n\r\nМодель VaporMax названа в честь команды \"Portland Trail Blazers\". Впервые модель появилась на площадках в 1972 году. Сейчас это уже классика lifestyle от Nike.', 'Кожа', '6 328', 'Женские'),
-(2, 'test', 'tesst', 'test', '123321', 'test');
+(2, 'test', 'tesst', 'test', '123321', 'test'),
+(3, 'Nike Air VaporMax 2023 Flyknit', 'Nike Air VaporMax 2023 Flyknit с амортизацией, созданной для плавного бега, представляет собой совершенно новый взгляд на знакомую коллекцию.  ', 'Кожа', '6 328', 'Женские  '),
+(4, '', '', '', '', '');
 
 --
 -- Индексы сохранённых таблиц
@@ -62,7 +64,7 @@ ALTER TABLE `stylestreet_tovar`
 -- AUTO_INCREMENT для таблицы `stylestreet_tovar`
 --
 ALTER TABLE `stylestreet_tovar`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
