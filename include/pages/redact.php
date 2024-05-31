@@ -28,23 +28,35 @@ if (isset($_POST['update'])) {
                                         `material`='$material',
                                         `category`='$category'
                                         WHERE id = '$get_id'";
-                                          
+
     $conn->query($sql);
-    echo '<script>document.location.href="?page=tovar&id='.$get_id.'"</script>';
+    echo '<script>document.location.href="?page=tovar&id=' . $get_id . '"</script>';
 }
 
 ?>
 
-<form method="POST" name="update" class="add__form Authorization__form wrap ">
-    <p>Название товара <span>*</span></p>
-    <input name="name" type="text" value="<?= $stylestreet_tovar['name'] ?>">
-    <p>Описание товара<span>*</span></p>
-    <input name="description" type="text" value="<?= $stylestreet_tovar['description'] ?> ">
-    <p>Цена товара <span>*</span></p>
-    <input name="price" type="text" value="<?= $stylestreet_tovar['price'] ?>">
-    <p>Материал <span>*</span></p>
-    <input name="material" type="text" value="<?= $stylestreet_tovar['material'] ?>">
-    <p>Категория товара <span>*</span></p>
-    <input name="category" type="text" value="<?= $stylestreet_tovar['category'] ?> ">
-    <input type="submit" value="Добавить товар" class="Authorization__form-btn" name="update">
-</form>
+<?php
+if (!isset($_SESSION['uid'])) {   //если пользователь не авторизован
+    echo '<script>document.location.href="?page=catalog"</script>';
+} else {
+    if ($SIGNIN_USER['role'] != 2) {  //если пользователь не админ
+        echo '<script>document.location.href="?"</script>';
+    } else { ?>
+
+        <form method="POST" name="update" class="add__form Authorization__form wrap ">
+            <p>Название товара <span>*</span></p>
+            <input name="name" type="text" value="<?= $stylestreet_tovar['name'] ?>">
+            <p>Описание товара<span>*</span></p>
+            <input name="description" type="text" value="<?= $stylestreet_tovar['description'] ?> ">
+            <p>Цена товара <span>*</span></p>
+            <input name="price" type="text" value="<?= $stylestreet_tovar['price'] ?>">
+            <p>Материал <span>*</span></p>
+            <input name="material" type="text" value="<?= $stylestreet_tovar['material'] ?>">
+            <p>Категория товара <span>*</span></p>
+            <input name="category" type="text" value="<?= $stylestreet_tovar['category'] ?> ">
+            <input type="submit" value="Добавить товар" class="Authorization__form-btn" name="update">
+        </form>
+
+<? }
+}
+?>

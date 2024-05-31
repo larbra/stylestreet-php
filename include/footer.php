@@ -53,7 +53,7 @@
 				</div>
 			</div>
 			<div class="footer__bottom">
-				<p class="footer__bottom-text">© 2024 - Рындин Кирилл Константинович</p>
+				<p class="footer__bottom-text">© 2024 - Кирилл Константинович</p>
 				<a href="#" class="footer__bottom-link">Политика конфиденциальности</a>
 			</div>
 		</div>

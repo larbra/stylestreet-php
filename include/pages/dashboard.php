@@ -1,8 +1,8 @@
 <?php
-    if($SIGNIN_USER['role'] == 3) {?>
+    if($SIGNIN_USER['role'] == 2) {?>
 <div class="adm">
     <div class="adml">
-        <p class="fs24 nam1"><?=$SIGNIN_USER['name']?> <?=$SIGNIN_USER['name2']?></p>
+        <p class="fs24 nam1"><?=$SIGNIN_USER['first_name']?></p>
 
         <a href="?page=users">Пользователи</a>
         <a href="?page=delred1">Товары</a>

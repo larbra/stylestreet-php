@@ -29,7 +29,7 @@ if (isset($_GET['id'])) {
 					<?= $stylestreet_tovar['description'] ?>
 				</p>
 				<p class="tovar__pol">
-					Категория:  <?= $stylestreet_tovar['category'] ?>
+					Категория: <?= $stylestreet_tovar['category'] ?>
 				</p>
 				<p class="tovar__mater">
 					Материал: <?= $stylestreet_tovar['material'] ?>
@@ -40,12 +40,21 @@ if (isset($_GET['id'])) {
 				<a class="tovar__btn" href="?page=basket">
 					Добавить в корзину
 				</a>
-				<a class="tovar__btn" href="?page=redact&id=<?=$get_id ?>">
-					Редактировать
-				</a>
-				<a class="tovar__btn" href="?page=del&id=<?=$get_id ?>">
-					Удалить
-				</a>
+				<?php
+				if (isset($_SESSION['uid'])) {
+					if ($SIGNIN_USER['role'] == 2) { ?>
+						<a class="tovar__btn" href="?page=redact&id=<?= $get_id ?>">
+							Редактировать
+						</a>
+						<a class="tovar__btn" href="?page=del&id=<?= $get_id ?>">
+							Удалить
+						</a>
+					<? } else { ?>
+
+				<? }
+				}
+				?>
+
 			</div>
 		</div>
 	</div>

@@ -13,8 +13,21 @@ if (isset($_GET['delete'])) {
     echo '<script>document.location.href="?page=catalog"</script>';
 }
 ?>
-<div class="del__page wrap">
-    <h1 class=" del__h1">Вы хотите удалить товар:</h1>
-    <a href="?page=del&id=<?=$get_id ?>&delete" class="">Да</a>
-    <a href="?page=tovar&id=<?= $get_id ?>" class="">Нет</a>
-</div>
+
+<?php
+if (!isset($_SESSION['uid'])) {   //если пользователь не авторизован
+    echo '<script>document.location.href="?page=catalog"</script>';
+} else {
+    if ($SIGNIN_USER['role'] != 2) {  //если пользователь не админ
+        echo '<script>document.location.href="?"</script>';
+    } else { ?>
+
+        <div class="del__page wrap">
+            <h1 class=" del__h1">Вы хотите удалить товар:</h1>
+            <a href="?page=del&id=<?= $get_id ?>&delete" class="">Да</a>
+            <a href="?page=tovar&id=<?= $get_id ?>" class="">Нет</a>
+        </div>
+
+<? }
+}
+?>

@@ -60,8 +60,7 @@ if (isset($_POST['create'])) {
         $sql = "INSERT INTO stylestreet_tovar (`name`,`description`,`price`,`material`,`category`)
         VALUES('$name','$description','$price','$material','$category')";
         $conn->query($sql);
-        echo '<script>document.location.href="?page=catalog"</script>';
-        ;
+        echo '<script>document.location.href="?page=catalog"</script>';;
     }
 }
 // проверки для ограниченных фнкций
@@ -112,7 +111,6 @@ if (!isset($_SESSION['uid'])) {   //если пользователь не ав�
             <?= $error ?>
         </form>
 
-    <? }
+<? }
 }
 ?>
-
